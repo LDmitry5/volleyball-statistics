@@ -1225,6 +1225,10 @@ const exportToWord = async (): Promise<void> => {
     padding-block: 8px;
   }
 
+  .main {
+    gap: 12px;
+  }
+
   .groupSelectTeam {
     gap: 25px;
   }

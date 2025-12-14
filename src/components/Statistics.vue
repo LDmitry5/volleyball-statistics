@@ -397,6 +397,7 @@ const totalKPDTeam2 = computed(() => {
 @media (max-width: 768px) {
   .teams-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .team-stats {
