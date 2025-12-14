@@ -1311,5 +1311,23 @@ const exportToWord = async (): Promise<void> => {
       font-size: 0.625rem;
     }
   }
+
+  @media (max-width: 375px) {
+    .score-total {
+      gap: 10px;
+    }
+
+    .score-total-item {
+      width: 100px;
+    }
+
+    .score-total :deep(.p-inputtext-lg) {
+      padding-inline: 10px;
+    }
+
+    .score-total :deep(.p-inputnumber-button) {
+      width: 32px;
+    }
+  }
 }
 </style>
