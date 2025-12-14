@@ -1,0 +1,17 @@
+@import "./base.css";
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  background-color: var(--bg-dark);
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+}
+
+a {
+  text-decoration: none;
+}

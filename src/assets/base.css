@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+:root {
+  --body-bg: #f8fafc;
+  --body-text-color: #0f172a;
+  --card-border: 1px solid #e2e8f0;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-color: #334155;
+  --overlay-background: #ffffff;
+  --border-radius: 10px;
+}
+
+:root[class="p-dark"] {
+  --body-bg: #09090b;
+  --body-text-color: #fafafa;
+  --card-border: 1px solid transparent;
+  --card-bg: #18181b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-color: #ffffff;
+  --overlay-background: #18181b;
+}
