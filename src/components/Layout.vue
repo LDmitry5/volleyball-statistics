@@ -1260,16 +1260,16 @@ const exportToWord = async (): Promise<void> => {
   }
 
   .header {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .header__h1 {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     font-weight: 600;
   }
 
   .header__p {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 
   .footer {
@@ -1278,12 +1278,12 @@ const exportToWord = async (): Promise<void> => {
 
   @media (max-width: 480px) {
     .header__h1 {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       font-weight: 600;
     }
 
     .header__p {
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
 
     .groupSelectTeam {
