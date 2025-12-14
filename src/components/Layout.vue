@@ -624,7 +624,7 @@ const createMetricsTable = (players: ITableRow[], maxWidth: number): Table => {
           new TableCell({
             children: [
               new Paragraph({
-                children: [new TextRun({ text: String(totalKPDTeam1.value), bold: true, size: 20 })],
+                children: [new TextRun({ text: String(totalKPDTeam1.value) + " %", bold: true, size: 20 })],
                 alignment: AlignmentType.CENTER,
               }),
             ],
@@ -632,7 +632,7 @@ const createMetricsTable = (players: ITableRow[], maxWidth: number): Table => {
           new TableCell({
             children: [
               new Paragraph({
-                children: [new TextRun({ text: String(totalKPDTeam2.value), bold: true, size: 20 })],
+                children: [new TextRun({ text: String(totalKPDTeam2.value) + " %", bold: true, size: 20 })],
                 alignment: AlignmentType.CENTER,
               }),
             ],
@@ -1278,12 +1278,12 @@ const exportToWord = async (): Promise<void> => {
 
   @media (max-width: 480px) {
     .header__h1 {
-      font-size: 0.875rem;
+      font-size: 1.125rem;
       font-weight: 600;
     }
 
     .header__p {
-      font-size: 0.625rem;
+      font-size: 0.875rem;
     }
 
     .groupSelectTeam {

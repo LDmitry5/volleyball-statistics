@@ -115,7 +115,7 @@ const totalKPDTeam2 = computed(() => {
               <span>{{ props.totalMinusTeam1 }}</span>
             </div>
             <div class="stat-item">
-              <span>Эффективность</span>
+              <span>Эффективность:</span>
               <span>{{ totalKPDTeam1 }}&thinsp;%</span>
             </div>
           </div>
@@ -173,7 +173,7 @@ const totalKPDTeam2 = computed(() => {
               <span>{{ props.totalMinusTeam2 }}</span>
             </div>
             <div class="stat-item">
-              <span>Эффективность</span>
+              <span>Эффективность:</span>
               <span>{{ totalKPDTeam2 }}&nbsp;%</span>
             </div>
           </div>
