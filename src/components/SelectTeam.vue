@@ -21,7 +21,9 @@ function sendValue() {
 <template>
   <FloatLabel class="selectTeam" variant="on">
     <Select v-model="teamValue" @change="sendValue" :options="teamsSelect" class="w-full" size="large" fluid />
-    <label>Команда 1</label>
+    <label>
+      <slot></slot>
+    </label>
   </FloatLabel>
 </template>
 

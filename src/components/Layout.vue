@@ -801,8 +801,8 @@ const exportToWord = async (): Promise<void> => {
   <main class="main">
     <div class="card">
       <div class="groupSelectTeam">
-        <SelectTeam @updateValue="handleValueOneTeam" />
-        <SelectTeam @updateValue="handleValueSecondTeam" />
+        <SelectTeam @updateValue="handleValueOneTeam">Команда 1</SelectTeam>
+        <SelectTeam @updateValue="handleValueSecondTeam">Команда 2</SelectTeam>
       </div>
       <div class="score">
         <span class="score-check">счет</span>
