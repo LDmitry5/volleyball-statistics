@@ -138,6 +138,15 @@ function onThemeToggler() {
   iconClass.value = iconClass.value === "pi pi-moon" ? "pi pi-sun" : "pi pi-moon";
 }
 
+// Фокус и скрытие клавиатуры InputNumber
+const preventFocus = (e: Event) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (document.activeElement instanceof HTMLElement) {
+    document.activeElement.blur();
+  }
+};
+
 // Экспорт в Word
 const createSinglePageDocument = (): Document => {
   const PAGE_WIDTH_TWIPS = 12240;
@@ -816,6 +825,8 @@ const exportToWord = async (): Promise<void> => {
               :min="0"
               :max="9"
               size="large"
+              @mousedown="preventFocus"
+              @touchstart="preventFocus"
               fluid>
               <template #incrementicon>
                 <span class="pi pi-plus" />
@@ -835,6 +846,8 @@ const exportToWord = async (): Promise<void> => {
               :min="0"
               :max="9"
               size="large"
+              @mousedown="preventFocus"
+              @touchstart="preventFocus"
               fluid>
               <template #incrementicon>
                 <span class="pi pi-plus" />
