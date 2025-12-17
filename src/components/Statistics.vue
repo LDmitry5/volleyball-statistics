@@ -174,7 +174,7 @@ const totalKPDTeam2 = computed(() => {
             </div>
             <div class="stat-item">
               <span>Эффективность:</span>
-              <span>{{ totalKPDTeam2 }}&nbsp;%</span>
+              <span>{{ totalKPDTeam2 }}&thinsp;%</span>
             </div>
           </div>
 
