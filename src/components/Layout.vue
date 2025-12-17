@@ -174,7 +174,7 @@ const createSinglePageDocument = (): Document => {
           new Paragraph({ spacing: { before: 100, after: 100 } }),
 
           // Таблица игроков
-          createPlayersTable(allPlayers.value, CONTENT_WIDTH_TWIPS),
+          createPlayersTable(),
 
           new Paragraph({
             children: [
@@ -189,7 +189,7 @@ const createSinglePageDocument = (): Document => {
           }),
 
           // Таблица метрик
-          createMetricsTable(allPlayers.value, CONTENT_WIDTH_TWIPS),
+          createMetricsTable(),
         ],
       },
     ],
@@ -341,7 +341,7 @@ const createScoreTable = (maxWidth: number): Table => {
 };
 
 // Таблица игроков (максимум 15 строк)
-const createPlayersTable = (players: ITableRow[], maxWidth: number): Table => {
+const createPlayersTable = (): Table => {
   const COL_WIDTH = {
     player: 25,
     servePlus: 10,
@@ -384,8 +384,84 @@ const createPlayersTable = (players: ITableRow[], maxWidth: number): Table => {
         }),
       }),
 
-      // Данные (максимум 15 игроков)
-      ...players.slice(0, 15).map(
+      // Заголовок команды 1
+      new TableRow({
+        children: [
+          new TableCell({
+            children: [
+              new Paragraph({
+                children: [new TextRun({ text: selectValueOneTeam.value, bold: true, size: 24 })],
+                alignment: AlignmentType.CENTER,
+              }),
+            ],
+            margins: {
+              top: 150,
+              bottom: 150,
+              left: 100,
+              right: 100,
+            },
+            verticalAlign: VerticalAlignTable.CENTER,
+            // Объединение всех колонок: ширина 100%
+            width: { size: 100, type: WidthType.PERCENTAGE },
+            shading: { fill: "e6e6e6" }, // Светло-серый фон для заголовка команды
+            columnSpan: Object.keys(COL_WIDTH).length, // Объединяем все колонки
+          }),
+        ],
+      }),
+
+      // игроки команды 1
+      ...allPlayersTeam1.value.map(
+        (player) =>
+          new TableRow({
+            children: Object.entries(COL_WIDTH).map(([key]) => {
+              const colKey = key as ColKey;
+              return new TableCell({
+                children: [
+                  new Paragraph({
+                    children: [new TextRun({ text: getCellValue(player, colKey), size: 18 })],
+                    alignment: AlignmentType.CENTER,
+                  }),
+                ],
+                margins: {
+                  top: 100,
+                  bottom: 100,
+                  left: 100,
+                  right: 100,
+                },
+                verticalAlign: VerticalAlignTable.CENTER,
+                width: { size: COL_WIDTH[colKey], type: WidthType.PERCENTAGE },
+              });
+            }),
+          })
+      ),
+
+      // Заголовок команды 2
+      new TableRow({
+        children: [
+          new TableCell({
+            children: [
+              new Paragraph({
+                children: [new TextRun({ text: selectValueSecondTeam.value, bold: true, size: 24 })],
+                alignment: AlignmentType.CENTER,
+              }),
+            ],
+            margins: {
+              top: 150,
+              bottom: 150,
+              left: 100,
+              right: 100,
+            },
+            verticalAlign: VerticalAlignTable.CENTER,
+            // Объединение всех колонок: ширина 100%
+            width: { size: 100, type: WidthType.PERCENTAGE },
+            shading: { fill: "e6e6e6" }, // Светло-серый фон для заголовка команды
+            columnSpan: Object.keys(COL_WIDTH).length, // Объединяем все колонки
+          }),
+        ],
+      }),
+
+      // игроки команды 2
+      ...allPlayersTeam2.value.map(
         (player) =>
           new TableRow({
             children: Object.entries(COL_WIDTH).map(([key]) => {
@@ -424,7 +500,7 @@ const createPlayersTable = (players: ITableRow[], maxWidth: number): Table => {
 };
 
 // Таблица метрик (общая статистика по команде)
-const createMetricsTable = (players: ITableRow[], maxWidth: number): Table => {
+const createMetricsTable = (): Table => {
   const totalActionsTeam1 = totalPlusTeam1.value + totalMinusTeam1.value;
   const totalActionsTeam2 = totalPlusTeam2.value + totalMinusTeam2.value;
 
