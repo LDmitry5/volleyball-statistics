@@ -287,10 +287,6 @@ const totalKPDTeam2 = computed(() => {
   text-align: center;
 }
 
-.metric-card:not(:first-child) .metric-title {
-  line-height: 2rem;
-}
-
 /* Секция команд */
 .teams-grid {
   display: grid;
@@ -421,6 +417,10 @@ const totalKPDTeam2 = computed(() => {
   .metric-card {
     padding: 10px;
     gap: 5px;
+  }
+
+  .metric-card:not(:first-child) .metric-title {
+    line-height: 2rem;
   }
 
   .metric-value {
